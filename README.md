@@ -2,8 +2,9 @@
 configuration to install arch with systemd-networkd and systemd-bootd instead of NetworkManager.service and GRUB
 
 
-#### systemd-networkd config
+### systemd-networkd config
 
+#### Ethernet Support
 check your network adapter
 ```
 ip a
@@ -34,7 +35,7 @@ Name=<network-adapter-name>
 DHCP=yes
 ```
 -----------------------------------------------------------------------------------------------------------------------
-WIFI support
+#### WIFI support
 
 WPA supplicant config
 
@@ -74,3 +75,4 @@ DHCP=yes
 
 ------------------------------------------------------------------------------------------------------------------------
 
+### systemd-bootd config

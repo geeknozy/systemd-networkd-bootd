@@ -59,6 +59,10 @@ Name=<wireless-network-adapter-name>
 [Network]
 DHCP=yes
 ```
+enable service
+```
+sudo systemctl enable iwd
+```
 
 Connecting to WiFi using iwd (one time)
 ```

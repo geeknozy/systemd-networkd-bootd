@@ -37,27 +37,12 @@ DHCP=yes
 -----------------------------------------------------------------------------------------------------------------------
 #### WIFI support
 
-WPA supplicant config
-
 ```
-nano /etc/wpa_supplicant/wpa_supplicant.conf
+sudo nano /etc/iwd/main.conf
 ```
 ```
-ctrl_interface=/run/wpa_supplicant
-update_config=1
-
-network={
-    ssid="YOUR_WIFI_NAME"
-    psk="YOUR_WIFI_PASSWORD"
-}
-```
-Enable it:
-
-```
-sudo systemctl enable wpa_supplicant@wlan0
-```
-```
-sudo systemctl start wpa_supplicant@wlan0
+[General]
+EnableNetworkConfiguration=false
 ```
 
 Wi-Fi network config for networkd
@@ -71,6 +56,17 @@ Name=<wireless-network-adapter-name>
 
 [Network]
 DHCP=yes
+```
+
+Connecting to WiFi using iwd (one time)
+```
+iwctl
+```
+```
+device list
+station wlan0 scan
+station wlan0 get-networks
+station wlan0 connect YOUR_SSID
 ```
 
 ------------------------------------------------------------------------------------------------------------------------

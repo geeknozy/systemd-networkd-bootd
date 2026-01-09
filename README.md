@@ -72,3 +72,52 @@ station wlan0 connect YOUR_SSID
 ------------------------------------------------------------------------------------------------------------------------
 
 ### systemd-bootd config
+
+```
+bootctl install  --boot-path=/boot
+```
+
+```
+nano /boot/loader/loader.conf
+```
+```
+default  arch.conf
+timeout  5
+console-mode max
+editor   no
+```
+
+loader.conf
+
+find disk UUID
+```
+blkid
+```
+
+```
+nano /boot/loader/entries/arch.conf
+```
+
+```
+title   Arch Linux
+linux   /vmlinuz-linux
+initrd  /intel-ucode.img
+initrd  /initramfs-linux.img
+options root=UUID=YOUR_ROOT_UUID rw
+```
+
+Optional
+
+```
+nano /boot/loader/entries/arch-fallback.conf
+```
+
+```
+title   Arch Linux (fallback)
+linux   /vmlinuz-linux
+initrd  /intel-ucode.img
+initrd  /initramfs-linux-fallback.img
+options root=UUID=YOUR_ROOT_UUID rw
+```
+
+

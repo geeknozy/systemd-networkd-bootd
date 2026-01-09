@@ -2,7 +2,7 @@
 configuration to install arch with systemd-networkd and systemd-bootd instead of NetworkManager.service and GRUB
 
 #### why did i choose systemd services instead of network manager and good old GRUB bootloader ? - When arch already comes with systemd services, why not use the same instead of bloating the system with other services ?
-## when you use config files you know what you have put and you know where to check if something goes wrong.
+#### when you use config files you know what you have put and you know where to check if something goes wrong.
 
 ### systemd-networkd config
 

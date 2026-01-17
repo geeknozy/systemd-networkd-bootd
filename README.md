@@ -126,4 +126,23 @@ initrd  /initramfs-linux-fallback.img
 options root=UUID=YOUR_ROOT_UUID rw
 ```
 
+update bootloader when there is a systemd update
+
+manual
+```
+sudo bootctl update
+```
+
+automatic using service
+
+```
+sudo systemctl enable --now systemd-boot-update.service
+```
+
+check status after update
+
+```
+bootctl status
+```
+
 

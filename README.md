@@ -93,7 +93,7 @@ console-mode max
 editor   no
 ```
 
-loader.conf
+loader.conf - for amd systems use amd-ucode
 
 find disk UUID
 ```
